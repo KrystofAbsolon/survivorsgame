@@ -1,4 +1,9 @@
+package io.github.survivors.managers;
+
 import java.util.HashMap;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class SpriteManager {
     private static SpriteManager instance;

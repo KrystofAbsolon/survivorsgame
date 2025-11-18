@@ -1,9 +1,12 @@
 package io.github.survivors;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+
+import io.github.survivors.entities.Player;
+import io.github.survivors.managers.EntityManager;
+import io.github.survivors.managers.SpriteManager;
+import io.github.survivors.managers.TextureManager;
 
 public class Main extends ApplicationAdapter {
     private SpriteManager sm;
@@ -15,6 +18,8 @@ public class Main extends ApplicationAdapter {
         tm = new TextureManager();
         sm = SpriteManager.getInstance();
         em = EntityManager.getInstance();
+
+
 
         em.addEntity(new Player());
         tm.loadTextures();

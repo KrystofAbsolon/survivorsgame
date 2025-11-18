@@ -1,3 +1,10 @@
+package io.github.survivors.entities;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+
+import io.github.survivors.managers.SpriteManager;
+
 public class Player extends Entity {
     private SpriteManager sm;
 

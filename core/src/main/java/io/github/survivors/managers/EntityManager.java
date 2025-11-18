@@ -1,5 +1,9 @@
+package io.github.survivors.managers;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.survivors.entities.Entity;
 
 public class EntityManager {
     private static EntityManager instance;

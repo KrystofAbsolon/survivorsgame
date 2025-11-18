@@ -1,3 +1,5 @@
+package io.github.survivors.managers;
+
 import java.io.File;
 
 public class TextureManager {

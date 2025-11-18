@@ -1,4 +1,4 @@
-
+package io.github.survivors.entities;
 
 public abstract class Entity {
     protected float x;

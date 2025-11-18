@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import io.github.survivors.entities.Enemy;
 import io.github.survivors.entities.Player;
 import io.github.survivors.managers.EntityManager;
 import io.github.survivors.managers.SpriteManager;
@@ -14,16 +15,15 @@ public class Main extends ApplicationAdapter {
     private SpriteManager sm;
     private EntityManager em;
     private TextureManager tm;
-    private Player player;
 
     @Override
     public void create() {
         tm = new TextureManager();
         sm = SpriteManager.getInstance();
         em = EntityManager.getInstance();
-        player = new Player();
 
-        em.addEntity(new Player());
+        em.addPlayer(new Player());
+        em.addEntity(new Enemy(300, 300, 8, 100, 10,"enemy"));
         tm.loadTextures();
     }
 
@@ -33,7 +33,6 @@ public class Main extends ApplicationAdapter {
 
         sm.begin();
         em.update();
-        player.update();
         sm.end();
 
         if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) Gdx.app.exit();

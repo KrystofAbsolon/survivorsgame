@@ -21,10 +21,13 @@ public class Player extends Entity {
         if (Gdx.input.isKeyPressed(Input.Keys.S)) this.y -= speed;
         if (Gdx.input.isKeyPressed(Input.Keys.A)) this.x -= speed;
         if (Gdx.input.isKeyPressed(Input.Keys.D)) this.x += speed;
+
+        this.sprite.setX(this.x);
+        this.sprite.setY(this.y);
     }
 
     @Override
     public void onCollide() {
-
+        System.out.println("Kolizze");
     }
 }

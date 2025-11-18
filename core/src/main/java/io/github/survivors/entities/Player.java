@@ -6,13 +6,14 @@ import com.badlogic.gdx.Input;
 import io.github.survivors.managers.SpriteManager;
 
 public class Player extends Entity {
-    private SpriteManager sm;
+    private final SpriteManager sm;
 
     public Player() {
-        super(100, 100, 32, 32, 1.0f, 10, 100, 10, "mogus");
+        super(100, 100, 32, 32, 1.0f, 10, 100, 10, "player");
         sm = SpriteManager.getInstance();
     }
 
+    @Override
     public void update() {
         sm.draw(getX(), getY(), getWidth(), getHeight(), getTexture());
 
@@ -22,6 +23,7 @@ public class Player extends Entity {
         if (Gdx.input.isKeyPressed(Input.Keys.D)) this.x += speed;
     }
 
+    @Override
     public void onCollide() {
 
     }

@@ -31,22 +31,20 @@ public class TextureManager {
 
         if (subfolders != null) {
             for (File sub : subfolders) {
-
                 if (!sub.isDirectory()) {
                     System.out.println("Skipping non-directory file: " + sub.getName());
                     continue;
                 }
-
                 File[] files = sub.listFiles();
                 if (files == null) {
                     System.err.println("Could not list files in subdirectory: " + sub.getName());
                     continue;
                 }
-
                 for (File img : files) {
                     if (img.isFile() && (img.getName().endsWith(".png") || img.getName().endsWith(".gif"))) {
                         sm.loadSprite(img.getName().replace(".png", "").replace(".gif", ""), img.getPath());
-                    } else {
+                    } 
+                    else {
                         System.out.println("Skipping non-image file: " + img.getName());
                     }
                 }
@@ -56,7 +54,8 @@ public class TextureManager {
         for (File img : rootFiles) {
             if (img.isFile() && (img.getName().endsWith(".png") || img.getName().endsWith(".gif"))) {
                 sm.loadSprite(img.getName().replace(".png", "").replace(".gif", ""), img.getPath());
-            } else {
+            } 
+            else {
                 System.out.println("Skipping non-image file: " + img.getName());
             }
         }

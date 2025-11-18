@@ -19,8 +19,6 @@ public class Main extends ApplicationAdapter {
         sm = SpriteManager.getInstance();
         em = EntityManager.getInstance();
 
-
-
         em.addEntity(new Player());
         tm.loadTextures();
     }

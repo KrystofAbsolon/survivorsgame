@@ -26,7 +26,9 @@ public class SpriteManager {
         }
 
     public void draw(float x, float y, float w, float h, String textureName) {
+        if(textures.get(textureName) != null) {
         batch.draw(textures.get(textureName), x, y, w, h);
+        }
     }
 
     public void begin() {
@@ -46,6 +48,7 @@ public class SpriteManager {
     }
 
     public void loadSprite(String name, String path) {
+        System.out.println(name);
         textures.put(name, new Texture(path));
     }
 }

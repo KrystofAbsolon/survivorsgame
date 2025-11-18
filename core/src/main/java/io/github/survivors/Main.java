@@ -5,28 +5,33 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class Main extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Texture image;
+    private SpriteManager sm;
+    private EntityManager em;
+    private TextureManager tm;
 
     @Override
     public void create() {
-        batch = new SpriteBatch();
-        image = new Texture("libgdx.png");
+        tm = new TextureManager();
+        sm = SpriteManager.getInstance();
+        em = EntityManager.getInstance();
+
+        em.addEntity(new Player());
+        tm.loadTextures();
     }
 
     @Override
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-        batch.begin();
-        batch.draw(image, 140, 210);
-        batch.end();
+
+        sm.begin();
+        em.update();
+        sm.draw(0, 0, 32, 32, "gigus");
+        sm.end();
     }
 
     @Override
     public void dispose() {
-        batch.dispose();
-        image.dispose();
+        sm.dispose();
     }
 }

@@ -69,10 +69,11 @@ public abstract class Entity {
     public void knockback() {
         
         float dir = (float) (Math.atan2(em.getPlayer().x - x, -(em.getPlayer().y - y)) - (Math.PI / 2));
-        this.x += (float)(Math.cos(dir) * knockbackInertia);
-        this.y += (float)(Math.sin(dir) * knockbackInertia);
+        this.x += (float)-(Math.cos(dir) * knockbackInertia);
+        this.y += (float)-(Math.sin(dir) * knockbackInertia);
         this.sprite.setX(x);
-        this.sprite.setY(y); 
+        this.sprite.setY(y);
+        knockbackInertia = 0;
     }
 
     public float getX() {

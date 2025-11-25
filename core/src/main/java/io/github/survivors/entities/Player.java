@@ -30,7 +30,7 @@ public class Player extends Entity {
     public void onCollide(Entity e) {
         if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
             e.damage(damage);
-            e.knockbackInertia += 30;
+            e.knockbackInertia += 150;
             e.knockback();
         }
     }

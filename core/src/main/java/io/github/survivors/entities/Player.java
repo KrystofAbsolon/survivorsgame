@@ -28,6 +28,10 @@ public class Player extends Entity {
 
     @Override
     public void onCollide(Entity e) {
-        health -= e.damage;
+        if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
+            e.damage(damage);
+            e.knockbackInertia += 30;
+            e.knockback();
+        }
     }
 }

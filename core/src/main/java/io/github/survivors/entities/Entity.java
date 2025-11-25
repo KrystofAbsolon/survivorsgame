@@ -14,7 +14,6 @@ public abstract class Entity {
     protected float speed;
     protected int health;
     protected int damage;
-    protected float knockbackInertia;
     protected String texture;
     protected boolean isDestroy;
     protected Sprite sprite;
@@ -31,7 +30,6 @@ public abstract class Entity {
         this.speed = speed;
         this.health = health;
         this.damage = damage;
-        this.knockbackInertia = 0;
         this.texture = texture;
         isDestroy = false;
         this.sprite = new Sprite();
@@ -66,14 +64,12 @@ public abstract class Entity {
         health -= damage;
     }
 
-    public void knockback() {
-        
+    public void knockback(float knockbackInertia) {
         float dir = (float) (Math.atan2(em.getPlayer().x - x, -(em.getPlayer().y - y)) - (Math.PI / 2));
         this.x += (float)-(Math.cos(dir) * knockbackInertia);
         this.y += (float)-(Math.sin(dir) * knockbackInertia);
         this.sprite.setX(x);
         this.sprite.setY(y);
-        knockbackInertia = 0;
     }
 
     public float getX() {
@@ -115,4 +111,13 @@ public abstract class Entity {
     public Sprite getSprite() {
         return sprite;
     }
+
+    public boolean isDestroy() {
+        return isDestroy;
+    }
+
+    public void setDestroy(boolean isDestroy) {
+        this.isDestroy = isDestroy;
+    }
+    
 }

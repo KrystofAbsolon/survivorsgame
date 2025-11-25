@@ -24,14 +24,13 @@ public class Player extends Entity {
 
         this.sprite.setX(this.x);
         this.sprite.setY(this.y);
+
+        if(health<=0) isDestroy = true;
     }
 
     @Override
     public void onCollide(Entity e) {
-        if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
-            e.damage(damage);
-            e.knockbackInertia += 150;
-            e.knockback();
-        }
+        e.knockback(350f);
+        System.out.println("Hit:" + Integer.toString(health));
     }
 }

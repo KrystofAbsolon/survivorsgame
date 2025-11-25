@@ -46,5 +46,6 @@ public class EntityManager {
                 }
             }
         }
+        entities.removeIf(Entity::isDestroy);
     }
 }

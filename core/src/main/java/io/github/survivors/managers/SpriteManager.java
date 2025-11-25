@@ -47,8 +47,7 @@ public class SpriteManager {
         batch.dispose();
     }
 
-    public void loadSprite(String name, String path) {
-        System.out.println(name);
+    public void loadSprite(String name, String path) {;
         textures.put(name, new Texture(path));
     }
 }

@@ -17,7 +17,7 @@ public class Enemy extends Entity {
         this.sprite.setX(this.x);
         this.sprite.setY(this.y);
 
-        if(health<=0) isDestroy = true;
+        if(health<=0) destroy();
     }
 
     public void onCollide(Entity e) {

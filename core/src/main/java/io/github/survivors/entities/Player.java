@@ -22,15 +22,18 @@ public class Player extends Entity {
         if (Gdx.input.isKeyPressed(Input.Keys.A)) this.x -= speed;
         if (Gdx.input.isKeyPressed(Input.Keys.D)) this.x += speed;
 
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+            em.addEntity(new Bullet(x, y, 16, 16, "player"));
+        }
+
         this.sprite.setX(this.x);
         this.sprite.setY(this.y);
 
-        if(health<=0) isDestroy = true;
+        if(health<=0) destroy();
     }
 
     @Override
     public void onCollide(Entity e) {
-        e.knockback(350f);
-        System.out.println("Hit:" + Integer.toString(health));
+        if(e instanceof Enemy) e.knockback(350f);
     }
 }

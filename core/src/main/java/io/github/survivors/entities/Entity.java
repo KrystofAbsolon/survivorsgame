@@ -47,6 +47,9 @@ public abstract class Entity {
         this.height = height;
         this.texture = texture;
         isDestroy = false;
+        this.sprite = new Sprite();
+        sprite.setPosition(x, y);
+        sprite.setSize(width, height);
 
         sm = SpriteManager.getInstance();
         em = EntityManager.getInstance();
@@ -56,7 +59,7 @@ public abstract class Entity {
 
     public abstract void onCollide(Entity e);
 
-    public void Destroy() {
+    public void destroy() {
         this.isDestroy = true;
     }
 

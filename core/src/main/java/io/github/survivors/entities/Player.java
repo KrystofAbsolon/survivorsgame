@@ -27,7 +27,7 @@ public class Player extends Entity {
     }
 
     @Override
-    public void onCollide() {
-        System.out.println("Kolizze");
+    public void onCollide(Entity e) {
+        health -= e.damage;
     }
 }

@@ -16,7 +16,6 @@ public class Enemy extends Entity {
 
     }
 
-    public void onCollide() {
-        System.out.println("Kolize");
+    public void onCollide(Entity e) {
     }
 }

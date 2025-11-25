@@ -54,7 +54,7 @@ public abstract class Entity {
 
     public abstract void update();
 
-    public abstract void onCollide();
+    public abstract void onCollide(Entity e);
 
     public void Destroy() {
         this.isDestroy = true;

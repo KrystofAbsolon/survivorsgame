@@ -40,8 +40,8 @@ public class EntityManager {
             for (Entity e2: entities) {
                 if (!e.equals(e2)) {
                     if (e.getSprite().getBoundingRectangle().overlaps(e2.getSprite().getBoundingRectangle())) {
-                        e.onCollide();
-                        e2.onCollide();
+                        e.onCollide(e2);
+                        e2.onCollide(e);
                     }
                 }
             }
